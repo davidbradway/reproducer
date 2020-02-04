@@ -1,8 +1,0 @@
-```
-/C/Program\ Files/R/R-3.6.2/bin/R.exe CMD BATCH --vanilla src/plot_data.R
-```
-
-https://github.com/davidbradway/learnr
-
-local R Repo
-dpb6@DESKTOP-FPDKPQH MINGW64 ~/Downloads/repos/myrepo (master)
