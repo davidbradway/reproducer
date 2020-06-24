@@ -1,0 +1,5 @@
+source("load_libraries.R",echo=T)
+source("read_data.R",echo=T)
+source("wrangle_data.R",echo=T)
+source("run_analysis.R",echo=T)
+source("plot_data.R",echo=T)
