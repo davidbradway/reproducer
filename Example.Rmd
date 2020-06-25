@@ -1,5 +1,5 @@
 ---
-title: "Example"
+title: "Report on Whale Data"
 author: "David Bradway"
 date: "2/4/2020"
 output:
@@ -7,26 +7,48 @@ output:
     keep_md: TRUE
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, cache = F}
+knitr::opts_chunk$set(echo = F)
+knitr::opts_knit$set(root.dir = "C:/Users/dpb6/Downloads/repos/reproducer")
 ```
 
-## R Markdown
+## Load the Libraries
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+```{r library, include=F, echo=F}
+source("src/load_libraries.R", local = knitr::knit_global(),echo=F)
+```
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Read the Raw Data
 
-```{r cars}
-summary(cars)
+```{r read, include=T, echo=F}
+source("src/read_data.R", local = knitr::knit_global(),echo=T)
+```
+
+## Wrangle Data
+
+```{r wrangle, include=T, echo=F}
+source("src/wrangle_data.R", local = knitr::knit_global(),echo=T)
+```
+
+## Do Analysis
+
+```{r analyze, include=T}
+source("src/run_analysis.R", local = knitr::knit_global(),echo=T)
+```
+
+## Stargazer Table
+
+```{r table, include=T, results = "asis"}
+source("src/make_table.R", local = knitr::knit_global(),echo=T)
 ```
 
 ## Including Plots
 
 You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r plot, include=T, echo=F, fig.width=7}
+source("src/plot_data.R", local = knitr::knit_global(),echo=T)
 ```
+
+<br>
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
